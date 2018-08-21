@@ -1,0 +1,7 @@
+STEP = 0
+while 1
+wait 'AP_AUDIO_INFO_UpdateLmd'
+STEP = STEP + 1
+statusbox STEP 'count'
+endwhile
+end

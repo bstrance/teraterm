@@ -1,0 +1,117 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;VERSION 1.00
+
+;;;;;;;;;;;;;;;;;;;TERM_INIT;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;COM_PORT設定は直接マクロ呼び込み時のみ有効
+COM_PORT = '1'
+;logFilePath
+LOG_FILE = 'C:\msys64\home\dsplog'
+;AutoLoggingMode
+;-----------------------
+;0 = Save As
+;1 = Force Save
+;2 = Same directory
+ALM = 1
+
+;;;;;;;;;;;;;;;;;Folder Timestamp format;;;;;;;;;;;;;;;;
+gettime YMD "%Y%m%d"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+BAUDRATE = '9600'
+SETTINGINFO= '/C='
+strconcat SETTINGINFO COM_PORT
+strconcat SETTINGINFO ' /BAUD='
+strconcat SETTINGINFO BAUDRATE
+
+strconcat LOG_FILE '\'
+strconcat LOG_FILE YMD
+
+connect SETTINGINFO
+setbaud 9600
+pause 1
+sendln ''
+pause 1
+sendln '!1DBG01'
+pause 1
+sendln 'b'
+pause 1
+setbaud 115200
+sendln
+pause 1
+sendln 'l !'
+PUSH = '#'
+wait PUSH
+
+sendln 'l !'
+pause 1
+
+;ログを開いていたら閉じる
+loginfo LOG_ACTIVE
+if result == -1 then
+;Version 4.54以前の対応
+;pass
+else
+logclose
+endif
+
+;;;;;;;;;;;;;;;;;;;;;LOGSETTING;;;;;;;;;;;;;;;;;;;;;;;;;
+
+if ALM == 2 then
+getdir SAVEDIR
+
+strconcat SAVEDIR '\'
+;mkdir
+EXECMD = 'cmd /c md "'
+strconcat SAVEDIR YMD
+strconcat EXECMD SAVEDIR
+strconcat EXECMD '"'
+exec EXECMD
+strconcat SAVEDIR '\'
+LOG_FILE = SAVEDIR
+changedir SAVEDIR
+
+else
+;mkdir
+EXECMD = 'cmd /c md "'
+strconcat EXECMD LOG_FILE
+strconcat EXECMD '"'
+exec EXECMD
+
+strconcat LOG_FILE '\'
+changedir LOG_FILE
+endif
+
+;;;;;;;;;;;;;;;;;;;;;;;;LogMode0;;;;;;;;;;;;;;;;;;;;;;;;
+if ALM == 0 then
+inputbox '>> LOG TITLE GOSE HERE <<' 'OUTPUT LOG NAME'
+strcompare inputstr ''
+
+if result == 1 then
+LOG_EXT = '.log'
+LOG_NAME = inputstr
+strconcat LOG_NAME LOG_EXT
+strconcat LOG_FILE LOG_NAME
+logopen LOG_FILE 0 1
+else
+;無入力の場合にログを取らない
+endif
+
+;;;;;;;;;;;;;;;;;;;;;;;;LogMode1, 2;;;;;;;;;;;;;;;;;;;;;
+else
+logdata = '%Y%m%d_%H%M_%S.log'
+strconcat LOG_FILE logdata
+logopen LOG_FILE 0 1
+endif
+;;;;;;;;;;;;;;;;;;;;;Select get log;;;;;;;;;;;;;;;;;;;;;
+;確認するlogの変数を以下のフォーマットに習って記載
+;sendln 'l *********'
+sendln 'l DP_DSP_COM'
+sendln 'l DF_DSP_SEQ'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pause 1
+;;;;;;;;;;;;;;;;;;;;;;;;dsp event;;;;;;;;;;;;;;;;;;;;;;;
+;PMTの確認が必要な場合はこの行をコメントアウトする。
+sendln 'dsp evt PMT'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+sendln ''

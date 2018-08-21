@@ -1,0 +1,851 @@
+;______________________________________________________________________________
+sendln "!1PWR01"
+call _init
+call _start
+
+:testroop
+filereadln fh order
+if result call _err
+
+    strcompare order "to"
+    if result = 0 then
+    call _to
+    endif
+    strcompare order "next"
+    if result = 0 then
+    call _next
+    endif
+    strcompare order "end"
+    if result = 0 then
+    call _end
+    endif
+    strcompare order "stereo"
+    if result = 0 then
+    call _stereo
+    endif
+    strcompare order "direct"
+    if result = 0 then
+    call _direct
+    endif
+    strcompare order "surround"
+    if result = 0 then
+    call _surround
+    endif
+    strcompare order "film"
+    if result = 0 then
+    call _film
+    endif
+    strcompare order "thx"
+    if result = 0 then
+    call _thx
+    endif
+    strcompare order "action"
+    if result = 0 then
+    call _action
+    endif
+    strcompare order "musical"
+    if result = 0 then
+    call _musical
+    endif
+    strcompare order "orchestra"
+    if result = 0 then
+    call _orchestra
+    endif
+    strcompare order "unplugged"
+    if result = 0 then
+    call _unplugged
+    endif
+    strcompare order "studioMix"
+    if result = 0 then
+    call _studioMix
+    endif
+    strcompare order "tvLogic"
+    if result = 0 then
+    call _tvLogic
+    endif
+    strcompare order "oob"
+    if result = 0 then
+    call _oob
+    endif
+    strcompare order "oov"
+    if result = 0 then
+    call _oov
+    endif
+    strcompare order "sports"
+    if result = 0 then
+    call _sports
+    endif
+    strcompare order "mono"
+    if result = 0 then
+    call _mono
+    endif
+    strcompare order "pureAudio"
+    if result = 0 then
+    call _pureAudio
+    endif
+    strcompare order "fullMono"
+    if result = 0 then
+    call _fullMono
+    endif
+    strcompare order "surroundEnhancer"
+    if result = 0 then
+    call _surroundEnhancer
+    endif
+    strcompare order "wholeHouseMode"
+    if result = 0 then
+    call _wholeHouseMode
+    endif
+    strcompare order "straight"
+    if result = 0 then
+    call _straight
+    endif
+    strcompare order "dolbySurround"
+    if result = 0 then
+    call _dolbySurround
+    endif
+    strcompare order "neuralX"
+    if result = 0 then
+    call _neuralX
+    endif
+    strcompare order "thxCinema"
+    if result = 0 then
+    call _thxCinema
+    endif
+    strcompare order "thxEx"
+    if result = 0 then
+    call _thxEx
+    endif
+    strcompare order "thxMusic"
+    if result = 0 then
+    call _thxMusic
+    endif
+    strcompare order "pl2Movie"
+    if result = 0 then
+    call _pl2Movie
+    endif
+    strcompare order "pl2Music"
+    if result = 0 then
+    call _pl2Music
+    endif
+    strcompare order "neo6Cinema"
+    if result = 0 then
+    call _neo6Cinema
+    endif
+    strcompare order "neo6Music"
+    if result = 0 then
+    call _neo6Music
+    endif
+    strcompare order "dsurrThxCinema"
+    if result = 0 then
+    call _dsurrThxCinema
+    endif
+    strcompare order "dsurrThxMusic"
+    if result = 0 then
+    call _dsurrThxMusic
+    endif
+    strcompare order "neuralXcinema"
+    if result = 0 then
+    call _neuralXcinema
+    endif
+    strcompare order "pl2Game"
+    if result = 0 then
+    call _pl2Game
+    endif
+    strcompare order "autoSurround"
+    if result = 0 then
+    call _autoSurround
+    endif
+    strcompare order "switchCBL"
+    if result = 0 then
+    call _switchCBL
+    endif
+    strcompare order "switchGAME"
+    if result = 0 then
+    call _switchGAME
+    endif
+    strcompare order "switchAUX"
+    if result = 0 then
+    call _switchAUX
+    endif
+    strcompare order "switchPC"
+    if result = 0 then
+    call _switchPC
+    endif
+    strcompare order "switchBD"
+    if result = 0 then
+    call _switchBD
+    endif
+    strcompare order "switchSBOX"
+    if result = 0 then
+    call _switchSBOX
+    endif
+    strcompare order "switchTV"
+    if result = 0 then
+    call _switchTV
+    endif
+    strcompare order "switchPHONO"
+    if result = 0 then
+    call _switchPHONO
+    endif
+    strcompare order "switchCD"
+    if result = 0 then
+    call _switchCD
+    endif
+    strcompare order "switchFM"
+    if result = 0 then
+    call _switchFM
+    endif
+    strcompare order "switchAM"
+    if result = 0 then
+    call _switchAM
+    endif
+    strcompare order "switchUSBF"
+    if result = 0 then
+    call _switchUSBF
+    endif
+    strcompare order "switchUSBR"
+    if result = 0 then
+    call _switchUSBR
+    endif
+    strcompare order "switchNET"
+    if result = 0 then
+    call _switchNET
+    endif
+    strcompare order "switchBT"
+    if result = 0 then
+    call _switchBT
+    endif
+    strcompare order "switchLINE1"
+    if result = 0 then
+    call _switchLINE1
+    endif
+    strcompare order "switchLINE2"
+    if result = 0 then
+    call _switchLINE2
+    endif
+    strcompare order "switchOPT"
+    if result = 0 then
+    call _switchOPT
+    endif
+    strcompare order "switchCOAX"
+    if result = 0 then
+    call _switchCOAX
+    endif
+    strcompare order "switchHDMI5"
+    if result = 0 then
+    call _switchHDMI5
+    endif
+    strcompare order "switchHDMI6"
+    if result = 0 then
+    call _switchHDMI6
+    endif
+    strcompare order "switchHDMI7"
+    if result = 0 then
+    call _switchHDMI7
+    endif
+
+goto testroop
+;<<<<<<<<<<<<<<sub routine>>>>>>>>>>>>>>
+;
+;common______________________________________________________________________
+;Constructor
+:_init
+setbaud 115200
+sendln "exit"
+pause 1
+setbaud 9600
+sendln
+pause 1
+setdlgpos 0 0
+filenamebox "Select sequence file.(.seq)" 0 "./Testrooper"
+fileopen fh inputstr 0
+MES=""
+QSET="!1DIF02"
+;Set Val________________________________________________________________________
+MES=""
+TO="\nto\n"
+strspecial TO
+QSET="!1DIF02"
+
+;LMD__________________________________________________________________________
+
+STEREO="!1LMD00"
+STEREO_MES="Stereo"
+DIRECT="!1LMD01"
+DIRECT_MES="Direct"
+SURROUND="!1LMD02"
+SURROUND_MES="Surround"
+FILM="!1LMD03"
+FILM_MES="Game-RPG";advanced Game
+THX="!1LMD04"
+THX_MES="THX"
+ACTION="!1LMD05"
+ACTION_MES="Action";Game-Action
+MUSICAL="!1LMD06"
+MUSICAL_MES="Musical/Game-Rock";Game-Rock
+ORCHESTRA="!1LMD08"
+ORCHESTRA_MES="Orchestra";classical
+UNPLUGGED="!1LMD09"
+UNPLUGGED_MES="Unplugged"
+STUDIOMIX="!1LMD0A"
+STUDIOMIX_MES="Studio-Mix"
+TVLOGIC="!1LMD0B"
+TVLOGIC_MES="TV logc";drama
+OOB="!1LMD0C"
+OOB_MES="All ch stereo"
+OOV="!1LMD0D";THEATERDIMENSIONAL
+OOV_MES="T-D"
+SPORTS="!1LMD0E"
+SPORTS_MES="Sports";Game-Sports
+MONO="!1LMD0F"
+MONO_MES="Mono"
+PUREAUDIO="!1LMD11"
+PUREAUDIO_MES="PureAudio"
+FULLMONO="!1LMD13"
+FULLMONO_MES="FullMono"
+VIRTUAL="!1LMD14";Surround Enhancer
+VIRTUAL_MES="SurroundEnhancer";
+WHM="!1LMD1F";Whole House Mode
+WHM_MES="Whole House Mode"
+STRAIGHT="!1LMD40"
+STRAIGHT_MES="Straight Decode"
+DSURR="!1LMD80";Dolby Atmos/Dolby Surround
+DSURR_MES="Atomos/Dolby Surround"
+NEURALX="!1LMD82";DTS:X/Neural:X
+NEURALX_MES="DTS*X/Neural:X"
+THXCINEMA="!1LMD42"
+THXCINEMA_MES="THX Cinema"
+THXEX="!1LMD43";THXSurroundEX
+THXEX_MES="THX Surround EX";
+THXMUSIC="!1LMD44"
+THXMUSIC_MES="THX Music"
+THXGAMES="!1LMD45"
+THXGAMES_MES="THX Games"
+THXUCINEMA="!1LMD50";THX U/S/I/S Cinema/Cinema2
+THXUCINEMA_MES="THX U/S/I/S Cinema/Cinema2"
+THXUMUSIC="!1LMD51";THX MusicMode,THX U/S/I/S Music
+THXUMUSIC_MES="THX MusicMode,THX U/S/I/S Music"
+THXUGAMES="!1LMD52";THX Games Mode,THX U/S/I/S Games
+THXUGAMES_MES="THX Games Mode,THX U/S/I/S Games"
+PL2MOVIE="!1LMD80";PLII/PLIIx Movie/Dolby Atmos/Dolby Surround
+PL2MOVIE_MES="PLII/PLIIx Movie"
+PL2MUSIC="!1LMD81";PLII/PLIIx Music
+PL2MUSIC_MES="PLII/PLIIx Music"
+NEO6CINEMA="!1LMD82";Neo:6 Cinema/Neo:X Cinema/DTS:X/Neural:X
+NEO6CINEMA_MES="Neo:6 Cinema/Neo:X Cinema"
+NEO6MUSIC="!1LMD83";Neo:6 Music/Neo:X Music
+NEO6MUSIC_MES="Neo:6 Music/Neo:X Music"
+DSURRTHXCINEMA="!1LMD84";Dolby Surround THX Cinema
+DSURRTHXCINEMA_MES="Dolby Surround THX Cinema"
+NEURALXTHXCINEMA="!1LMD85";Neo:6/Neo:X THX Cinema/DTS Neural:X THX Cinema
+NEURALXTHXCINEMA_MES="DTS Neural:X THX Cinema"
+PL2GAME="!1LMD86";PLII/PLIIx Game
+PL2GAME_MES="PLII/PLIIx Game"
+DSURRTHXGAMES="!1LMD89";PLII/PLIIx THX Games/Dolby Surround THX Games
+DSURRTHXGAMES_MES="Dolby Surround THX Games"
+NEURALXTHXGAMES="!1LMD8A";Neo:6/Neo:X THX Games/DTS Neural:X THX Games
+NEURALXTHXGAMES_MES="DTS Neural:X THX Games"
+DSURRTHXMUSIC="!1LMD8B";PLII/PLIIx THX Music/Dolby Surround THX Music
+DSURRTHXMUSIC_MES="Dolby Surround THX Music"
+NEURALXTHXMUSIC="!1LMD8C";Neo:6/Neo:X THX Music/DTS Neural:X THX Music
+NEURALXTHXMUSIC_MES="DTS Neural:X THX Music"
+AUTOSURR="!1LMDFF";Auto Surround
+AUTOSURR_MES="Auto Surround"
+;_____________________________________________________________________________
+;LMD Control
+LMDUP="!1LMDUP";Wrap-Around Up
+LMDDW="!1LMDDOWN";Wrap-Around Down
+LMDMOVIE="!1LMDMOVIE";Wrap-Around Up
+LMDMUSIC="!1LMDMUSIC";Wrap-Around Up
+LMDGAME="!1LMDGAME";Wrap-Around Up
+LMDTHX="!1LMDTHX";Wrap-Around Up
+LMDDAUTO="!1LMDAUTO";Wrap-Around Up
+LMDDSURR="!1LMDSURR";Wrap-Around Up
+LMDSTEREO="!1LMDSTEREO";Wrap-Around Up
+LMDGET="!1LMDQSTN";gets The Listening Mode
+;_____________________________________________________________________________
+;Selector
+CBL="!1SLI01";
+CBL_MES="[CBL]";VIDEO2
+GAME="!1SLI02"
+GAME_MES="[GAME]";VIDEO3
+AUX="!1SLI03"
+AUX_MES="[AUX1(AUX)]";VIDEO4
+PC="!1SLI05";
+PC_MES="[PC]";VIDEO6
+;EX1="!1SLI07"
+;EX1_MES="Hidden1EXTRA1"
+;EX2="!1SLI08"
+;EX2_MES="Hidden2EXTRA2"
+;EX3="!1SLI09"
+;EX3_MES="Hidden3EXTRA3"
+BD="!1SLI10"
+BD_MES="[BD]"
+SBOX="!1SLI11"
+SBOX_MES="STRM BOX"
+TV="!1SLI12"
+TV_MES="[TV]"
+;TAPE="!1SLI20";
+;swit_MESchTAPE="TV/TAPE";TAPE(1)TV/TAPE
+PHONO="!1SLI22"
+PHONO_MES="[PHONO]"
+CD="!1SLI23"
+CD_MES="[CD]";TV/CD
+FM="!1SLI24"
+FM_MES="[FM]"
+AM="!1SLI25"
+AM_MES="[AM]"
+;TUNER="!1SLI26"
+;TUNER_MES="[TUNER]"
+;MSERVER="!1SLI27";
+;MSERVER_MES="MUSIC SERVER ";MUSIC SERVER    P4S   DLNA*2
+;INT="!1SLI28";
+;INT_MES="INTERNET RADIO";INTERNET RADIO/iRadio Favorite*3
+USBF="!1SLI29"
+USBF_MES="[USB(Front)]"
+USBR="!1SLI2A"
+USBR_MES="[USB(Rear)]"
+NET="!1SLI2B";
+NET_MES="[NET]";
+BT="!1SLI2E"
+BT_MES="[BT]"
+;SUBDAC="!1SLI2F";
+;SUBDAC_MES="USB DAC In"
+LINE1="!1SLI41"
+LINE1_MES="[LINE1]"
+LINE2="!1SLI42"
+LINE2_MES="[LINE2]"
+OPT="!1SLI44"
+OPT_MES="[OPT]"
+COAX="!1SLI45"
+COAX_MES="[COAX]"
+;DAB="!1SLI33"
+;DAB_MES="DAB"
+HDMI5="!1SLI55"
+HDMI5_MES="[HDMI5]"
+HDMI6="!1SLI56"
+HDMI6_MES="[HDMI6]"
+HDMI7="!1SLI57"
+HDMI7_MES="[HDMI7]"
+;_____________________________________________________________________________
+;Selector Control
+SELUSB="!1SLI2C"; USB Toggle
+SELUP="!1SLIUP";Selector Position Wrap-Around Up
+SELDOWN="!1SLIDOWN";Selector Position Wrap-Around Down
+SELGET="!1SLIQSTN";gets The Selector Position
+;_____________________________________________________________________________
+return
+
+;Common  routine
+:_start
+MES = "START"
+statusbox MES  "LMD Change"
+sendln QSET
+MES = ""
+return
+
+:_to
+strconcat MES TO
+statusbox MES  "LMD Change"
+pause 2
+return
+
+:_pau
+pause 2
+return
+
+:_nextpau
+pause 5
+return
+
+:_switchpau
+pause 5
+return
+
+:_next
+statusbox MES  "LMD Change"
+sendln QSET
+call _nextpau
+MES = ""
+return
+
+:_lmdFunc
+statusbox MES  "LMD Change"
+sendln QSET
+call _pau
+return
+
+:_switchFunc
+statusbox MES  "LMD Change"
+sendln QSET
+call _switchpau
+return
+
+;LMD__________________________________________________________________________
+:_stereo
+sendln STEREO
+strconcat MES STEREO_MES
+call _lmdFunc
+return
+
+:_direct
+sendln DIRECT
+strconcat MES DIRECT_MES
+call _lmdFunc
+return
+
+;:_surround
+
+:_film
+sendln FILM
+strconcat MES FILM_MES
+call _lmdFunc
+return
+
+;:_thx
+
+:_action
+sendln ACTION
+strconcat MES ACTION_MES
+call _lmdFunc
+return
+
+:_musical
+sendln MUSICAL
+strconcat MES ACTION_MES
+call _lmdFunc
+return
+
+:_orchestra
+sendln ORCHESTRA
+strconcat MES ORCHESTRA_MES
+call _lmdFunc
+return
+
+:_unplugged
+sendln UNPLUGGED
+strconcat MES UNPLUGGED_MES
+statusbox MES  "LMD Change"
+call _lmdFunc
+return
+
+:_studioMix
+sendln STUDIOMIX
+strconcat MES STUDIOMIX_MES
+statusbox MES  "LMD Change"
+call _lmdFunc
+return
+
+:_tvLogic
+sendln TVLOGIC
+strconcat MES TVLOGIC_MES
+statusbox MES  "LMD Change"
+call _lmdFunc
+return
+
+:_oob
+sendln OOB
+strconcat MES OOB_MES
+call _lmdFunc
+return
+
+:_oov
+sendln OOV
+strconcat MES OOV_MES
+call _lmdFunc
+return
+
+:_sports
+sendln SPORTS
+strconcat MES SPORTS_MES
+call _lmdFunc
+return
+
+:_mono
+sendln MONO
+strconcat MES MONO_MES
+call _lmdFunc
+return
+
+:_pureAudio
+sendln PUREAUDIO
+strconcat MES PUREAUDIO_MES
+call _lmdFunc
+return
+
+:_fullMono
+sendln FULLMONO
+strconcat MES FULLMONO_MES
+call _lmdFunc
+return
+
+:_surroundEnhancer
+sendln VIRTUAL
+strconcat MES VIRTUAL_MES
+call _lmdFunc
+return
+
+:_wholeHouseMode
+sendln WHM
+strconcat MES WHM_MES
+call _lmdFunc
+return
+
+:_straight
+sendln STRAIGHT
+strconcat MES STRAIGHT_MES
+call _lmdFunc
+return
+
+:_dolbySurround
+sendln DSURR
+strconcat MES DSURR_MES
+call _lmdFunc
+return
+
+:_neuralX
+sendln NEURALX
+strconcat MES NEURALX_MES
+call _lmdFunc
+return
+
+:_thxCinema
+sendln THXCINEMA
+strconcat MES THXCINEMA_MES
+call _lmdFunc
+return
+
+:_thxEx
+sendln THXEX
+strconcat MES THXEX_MES
+call _lmdFunc
+return
+
+:_thxMusic
+sendln THXMusic
+strconcat MES THXMUSIC_MES
+call _lmdFunc
+return
+
+:_thxGames
+sendln THXGAMES
+strconcat MES THXGAMES_MES
+call _lmdFunc
+return
+
+:_pl2Movie
+sendln PL2MOVIE
+strconcat MES PL2MOVIE_MES
+call _lmdFunc
+return
+
+:_pl2Music
+sendln PL2MUSIC
+strconcat MES PL2MUSIC_MES
+call _lmdFunc
+return
+
+:_neo6Cinema
+sendln NEO6CINEMA
+strconcat MES NEO6CINEMA_MES
+call _lmdFunc
+return
+
+:_neo6Music
+sendln NEO6MUSIC
+strconcat MES NEO6MUSIC_MES
+call _lmdFunc
+return
+
+:_dsurrThxCinema
+sendln DSURRTHXCINEMA
+strconcat MES DSURRTHXCINEMA_MES
+call _lmdFunc
+return
+
+:_dsurrThxGames
+sendln DSURRTHXGAMES
+strconcat MES DSURRTHXGAMES_MES
+call _lmdFunc
+return
+
+:_dsurrThxMusic
+sendln DSURRTHXMUSIC
+strconcat MES DSURRTHXMUSIC_MES
+call _lmdFunc
+return
+
+:_neuralXcinema
+sendln NEURALXTHXCINEMA
+strconcat MES NEURALXCINEMA_MES
+call _lmdFunc
+return
+
+:_neuralXgames
+sendln NEURALXTHXGAMES
+strconcat MES NEURALXGAMES_MES
+call _lmdFunc
+return
+
+:_pl2Game
+sendln PL2GAME
+strconcat MES PL2GAME_MES
+call _lmdFunc
+return
+
+:_autoSurround
+sendln AUTOSURR
+strconcat MES AUTOSURR_MES
+call _lmdFunc
+return
+
+;SELECTOR______________________________________________________________________
+
+:_switchCBL
+sendln CBL
+strconcat MES CBL_MES
+call _switchFunc
+return
+
+:_switchGAME
+sendln GAME
+strconcat MES GAME_MES
+call _switchFunc
+return
+
+:_switchAUX
+sendln AUX
+strconcat MES AUX_MES
+call _switchFunc
+return
+
+:_switchPC
+sendln PC
+strconcat MES PC_MES
+call _switchFunc
+return
+
+:_switchBD
+sendln BD
+strconcat MES BD_MES
+call _switchFunc
+return
+
+:_switchSBOX
+sendln SBOX
+strconcat MES SBOX_MES
+call _switchFunc
+return
+
+:_switchTV
+sendln TV
+strconcat MES TV_MES
+call _switchFunc
+return
+
+:_switchPHONO
+sendln PHONO
+strconcat MES PHONO_MES
+call _switchFunc
+return
+
+:_switchCD
+sendln CD
+strconcat MES CD_MES
+call _switchFunc
+return
+
+:_switchFM
+sendln FM
+strconcat MES FM_MES
+call _switchFunc
+return
+
+:_switchAM
+sendln AM
+strconcat MES AM_MES
+call _switchFunc
+return
+
+:_switchUSBF
+sendln USBF
+strconcat MES USBF_MES
+call _switchFunc
+return
+
+:_switchUSBR
+sendln USBR
+strconcat MES USBR_MES
+call _switchFunc
+return
+
+:_switchNET
+sendln NET
+strconcat MES NET_MES
+call _switchFunc
+return
+
+:_switchBT
+sendln BT
+strconcat MES BT_MES
+call _switchFunc
+return
+
+:_switchLINE1
+sendln LINE1
+strconcat MES LINE1_MES
+call _switchFunc
+return
+
+:_switchLINE2
+sendln LINE2
+strconcat MES LINE2_MES
+call _switchFunc
+return
+
+:_switchOPT
+sendln OPT
+strconcat MES OPT_MES
+call _switchFunc
+return
+
+:_switchCOAX
+sendln COAX
+strconcat MES COAX_MES
+call _switchFunc
+return
+
+:_switchHDMI5
+sendln HDMI5
+strconcat MES HDMI5_MES
+call _switchFunc
+return
+
+:_switchHDMI6
+sendln HDMI6
+strconcat MES HDMI6_MES
+call _switchFunc
+return
+
+:_switchHDMI7
+sendln HDMI7
+strconcat MES HDMI7_MES
+call _switchFunc
+return
+
+;_______________________________________________________________________________
+:_err
+MES="Error!!!!!!!!"
+fileclose fh
+statusbox MES  "LMD Change"
+pause 8
+end
+
+:_end
+MES="End!!!!!!!!!"
+fileclose fh
+statusbox MES  "LMD Change"
+call _nextpau
+;sendln "!1PWR00"
+end
+;________________________________________________________________________________

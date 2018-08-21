@@ -1,0 +1,15 @@
+;;;;;;;;;;;;;;;;actionSpan(sec);;;;;;;;;;;;;;;;;;;;;;;;;
+SPAN = 20
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STEP = 0
+statusbox STEP 'count'
+while 1
+sendln '!1SLI01'
+STEP = STEP + 1
+statusbox STEP 'count'
+pause SPAN
+sendln '!1SLI02'
+STEP = STEP + 1
+statusbox STEP 'count'
+pause SPAN
+endwhile
